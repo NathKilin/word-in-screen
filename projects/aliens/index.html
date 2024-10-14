@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded YouTube Video Playlist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="video-container">
+        <iframe id="youtube-video" src="https://www.youtube.com/embed/1m3Xtveofg0?autoplay=1&mute=1&enablejsapi=1"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
+
+    <script>
+        var videoPlaylist = [
+            { id: '1m3Xtveofg0', endTime: '7:10' }, // Minuto e segundo especificado
+            { id: 'hlBJsD8tBco' },                 // Sem tempo, passa completo
+            { id: 'Y7b1qp3X2xA', endTime: '12:26' },
+            { id: 'LCt5IolO2QI' },
+            { id: 'xPICUnXFhCY', endTime: '8:16' },
+            { id: 'KdT4tHOhfIU' },
+            { id: '6_qQhFo07Gg', endTime: '4:48' },
+            { id: 'AvbUkBG0yrc', endTime: '4:52' },
+            { id: 'aIhnqkXWSR8' },
+            { id: 'AvbUkBG0yrc' },
+            { id: 'W_4DqPraFpU' },
+            { id: 'Ux82ksc6Bmk' },
+            { id: 'vDpDhofRoXA' },
+            { id: 'wIBf-nVMfbg' },
+            { id: 'AdBu6VAESeI', endTime: '2:15' }
+        ];
+
+        var currentVideoIndex = 0;
+        var player;
+        var timer;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-video', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                clearTimeout(timer); // Limpa qualquer timer anterior
+                var currentVideo = videoPlaylist[currentVideoIndex];
+
+                if (currentVideo.endTime) {
+                    var endTimeInSeconds = convertTimeToSeconds(currentVideo.endTime);
+                    timer = setTimeout(function() {
+                        playNextVideo();
+                    }, (endTimeInSeconds - player.getCurrentTime()) * 1000);
+                }
+            } else if (event.data === YT.PlayerState.ENDED) {
+                playNextVideo();
+            }
+        }
+
+        function playNextVideo() {
+            currentVideoIndex++;
+            if (currentVideoIndex < videoPlaylist.length) {
+                var nextVideo = videoPlaylist[currentVideoIndex];
+                var newVideoUrl = `https://www.youtube.com/embed/${nextVideo.id}?autoplay=1&mute=1&enablejsapi=1`;
+                player.loadVideoByUrl(newVideoUrl);
+            }
+        }
+
+        function convertTimeToSeconds(timeStr) {
+            var timeParts = timeStr.split(':');
+            var minutes = parseInt(timeParts[0], 10);
+            var seconds = parseInt(timeParts[1], 10);
+            return (minutes * 60) + seconds;
+        }
+
+        // Carrega a API do YouTube de forma assíncrona
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    </script>
+</body>
+</html>

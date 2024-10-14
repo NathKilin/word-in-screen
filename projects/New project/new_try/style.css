@@ -1,0 +1,141 @@
+* {
+    margin: 0; /* Reset all margins to avoid unexpected spaces */
+    padding: 0; /* Reset all padding to ensure consistency */
+    box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+    font-family: 'Overpass', sans-serif; /* Set the default font for the entire page */
+}
+body {
+    height: 100vh; /* Set the body to take up the full height of the viewport */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: hsl(216, 12%, 8%); /* Dark background color */
+    color: hsl(0, 0%, 100%); /* Set text color to white */
+    background-image: url('../design/desktop-preview.jpg'); /* Set background image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-position: center; /* Center the background image */
+    background-size: cover; /* Ensure the background covers the entire container */
+    z-index: -1; /* Make sure the background stays behind other elements */
+}
+
+.rating-container, .thank-you-container {
+    background-color: hsl(213, 19%, 18%); /* Container background color */
+    padding: 2rem; /* Add padding inside the containers */
+    border-radius: 15px; /* Round the container's corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+    text-align: center; /* Center the text inside the container */
+    width: 90%; /* Make the container take up 90% of its parent */
+    max-width: 400px; /* Set a maximum width for the container */
+}
+
+.rating-buttons {
+    display: flex; /* Use flexbox to align buttons horizontally */
+    justify-content: space-between; /* Distribute buttons with equal space between them */
+    margin: 1rem 0; /* Add vertical margin */
+    color: white; /* Set button text color */
+    cursor: pointer; /* Change cursor to pointer when hovering */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.rating-btn {
+    background-color: hsl(213, 19%, 23%); /* Default button background color */
+    border: none; /* Remove default border */
+    border-radius: 50%; /* Make buttons circular */
+    width: 50px; /* Set button width */
+    height: 50px; /* Set button height */
+    font-size: 1.2rem; /* Set font size */
+    margin-bottom: 10px; /* Add space below the button */
+    color: hsl(213, 19%, 63%); /* Set button text color */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+}
+
+.rating-btn:hover {
+    background-color: white; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+.submit-btn {
+    background-color: hsl(25, 97%, 53%); /* Set submit button background color */
+    border: none; /* Remove default border */
+    color: white; /* Set text color to white */
+    padding: 1rem; /* Add padding inside the button */
+    border-radius: 25px; /* Round the button's corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+    text-align: center; /* Center the text */
+    width: 100%; /* Make button take full width */
+    text-transform: uppercase; /* Transform text to uppercase */
+    /* font-weight: bolder; */ /* Optionally make the text bold */
+}
+
+.submit-btn:hover {
+    background-color: white; /* Change background color on hover */
+    color: black; /* Change text color on hover */
+}
+
+.star-container {
+    width: 40px; /* Set container width */
+    height: 40px; /* Set container height */
+    background-color: hsl(213, 19%, 23%); /* Set background color */
+    border-radius: 50%; /* Make the container circular */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+h1, p, .star-container {
+    text-align: left; /* Align text to the left */
+    margin-bottom: 40px; /* Add space below elements */
+}
+
+p2 {
+    color: hsl(213, 19%, 63%); /* Set text color */
+    font-size: 15px; /* Set font size */
+}
+
+.you-selected-container {
+    background-color: hsl(213, 19%, 23%); /* Container background color */
+    border: none; /* Remove border */
+    color: white; /* Set text color to white */
+    border-radius: 25px; /* Round container corners */
+    display: flex; /* Use flexbox for alignment */
+    text-align: center; /* Center text */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 70%; /* Set container width */
+    margin-bottom: 2rem; /* Add space below the container */
+}
+
+p1 {
+    color: hsl(25, 97%, 53%); /* Set text color */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    font-size: 15px; /* Set font size */
+}
+
+/* Style for the SVG image */
+.thank-you-image {
+    display: flex; /* Use flexbox to align content */
+    justify-content: center; /* Center content horizontally */
+    margin-bottom: 2rem; /* Add space below the image */
+}
+
+.thank-you-image svg {
+    max-width: 100%; /* Ensure the image fits within its container */
+    height: auto; /* Maintain the image's aspect ratio */
+}
+
+.thank-you-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack content vertically */
+}
+
+.rating-btn.active {
+    background-color: hsl(25, 97%, 53%); /* Set background color for active buttons */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
