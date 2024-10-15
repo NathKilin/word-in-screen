@@ -1,9 +1,12 @@
+/* Resets margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  body{
+}
+
+/* Styles for the body */
+body {
     font-family: 'Work Sans', sans-serif;
     background-color: hsl(275, 100%, 97%);
     color: hsl(292, 42%, 14%);
@@ -11,13 +14,137 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    max-height: none;
     padding: 20px;
     flex-direction: column;
-  }
-  .content-container{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* SVG Background container */
+.svg-background {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    width: 100%;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    z-index: -1;
+}
+
+/* Mobile-specific styling */
+body {
+    background-image: url('caminho-para-imagem-mobile.svg'); /* Mobile background */
+}
+
+/* Desktop styling */
+@media (min-width: 768px) {
+    .content-container {
+        width: 60%; /* Aumenta para desktop */
+        max-width: 1000px;
+        padding: 30px;
+    }
+    .svg-background {
+        background-image: url('caminho-para-imagem-desktop.svg'); /* Desktop background */
+        height: 320px;
+    }
+}
+
+/* Wrapper for the FAQ content */
+.content-container {
+    z-index: 1;
     background-color: white;
     width: 45%;
     max-width: 400px;
     border-radius: 10px;
-  }
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* FAQ Title Container */
+.faq-title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.faq-title-container svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Styles for the FAQ title */
+.faq-title {
+    font-size: 24px;
+    color: hsl(292, 42%, 14%);
+}
+
+/* Styles for each FAQ item */
+.faq-item {
+    padding: 15px 0;
+}
+
+/* Styles for the question */
+.faq-question {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: end;
+    color: hsl(292, 42%, 14%);
+    margin-right: 10px;
+    flex: 1;
+}
+
+/* Aligns the question and button */
+.faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for the toggle button */
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    background-color: hsl(293, 55%, 55%);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: hsl(295, 33%, 32%);
+}
+
+/* Styles for the answer */
+.faq-answer {
+    color: hsl(292, 12%, 64%);
+    font-size: 14px;
+    line-height: 20px;
+    word-spacing: 2px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s, padding 1s;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 10px 0;
+}
+
+/* Attribution section */
+.attribution {
+    margin-top: 50px;
+    color: hsl(292, 42%, 14%);
+    font-size: 14px;
+}
