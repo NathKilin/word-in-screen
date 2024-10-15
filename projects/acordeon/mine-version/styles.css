@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: 'Work Sans', sans-serif;
+    background-color: hsl(275, 100%, 97%);
+    color: hsl(292, 42%, 14%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-height: none;
+    padding: 20px;
+    flex-direction: column;
+  }
+  .content-container{
+    background-color: white;
+    width: 45%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
