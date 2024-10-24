@@ -1,4 +1,3 @@
-<!--movie.html-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Details</title>
     <link rel="stylesheet" href="./home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Movie Details</h1>
     
-    <!-- Container for displaying movie details -->
-    <div id="movie-details"></div>
+    <div id="movie-details">
+        <img id="movie-poster" src="" alt="Movie Poster">
+        <div id="movie-info">
+            <h2 id="movie-title"></h2>
+            <p id="movie-overview"></p>
+            <div class="info-group">
+                <p>Release Date:</p>
+                <p id="release-date"></p>
+            </div>
+            <div class="info-group">
+                <p>Rating:</p>
+                <p id="movie-rating"></p>
+            </div>
+            <h3>Cast</h3>
+            <ul id="movie-cast"></ul>
+        </div>
+    </div>
 
-    <!-- Back button to return to the previous page -->
+    <div id="movie-trailer"></div>
+
     <button id="back-button">Go Back</button>
 
     <script src="./movie.js"></script>

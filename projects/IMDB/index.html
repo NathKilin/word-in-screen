@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NMDB</title>
     <link rel="stylesheet" href="./home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Filmes Populares</h1>
 
-    <!-- Search input and button -->
+    <!-- Menu toggle button -->
+    <div class="menu-toggle" id="menu-toggle">
+        <span id="menu-icon">➕</span>
+    </div>
+
+    <!-- Menu items that will appear on toggle -->
+    <div class="menu-items" id="menu-items">
+        <button class="menu-button" id="categories-button">Categories</button>
+        <button class="menu-button" id="contact-button">Contact Us</button>
+    </div>
+
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Search for a movie...">
         <button id="search-button">Search</button>
     </div>
     
-    <!-- Link to the Favorite page -->
-    <a href="favorite.html">View My Favorites</a>
+    <button id="favorites-button">View My Favorites</button>
     
-    <!-- Carousel container with scroll buttons -->
     <div class="carousel-container">
         <button class="scroll-button left" id="scroll-left">◀</button>
         <div id="movies-container"></div>

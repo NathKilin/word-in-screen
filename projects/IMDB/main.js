@@ -33,8 +33,8 @@ function displayMovies(movies) {
             <h2>${movie.title}</h2>
             <p>Rating: ${movie.vote_average}</p>
             <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
-            <button class="favorite-button ${isFavorite ? 'blue' : 'white'}" data-id="${movie.id}">
-                👍
+            <button class="favorite-button ${isFavorite ? 'yellow' : 'white'}" data-id="${movie.id}">
+                ⭐
             </button>
         `;
 
@@ -72,6 +72,7 @@ function toggleFavorite(movieId, buttonElement) {
     }
 }
 
+
 function scrollRight(movies) {
     const moviesPerPage = 3;
     if (currentStartIndex + moviesPerPage < movies.length) {
@@ -102,3 +103,31 @@ document.getElementById('search-button').addEventListener('click', () => {
 });
 
 fetchPopularMovies();
+// Adicionar o evento de clique para redirecionar para a página de favoritos
+document.getElementById('favorites-button').addEventListener('click', () => {
+    window.location.href = 'favorite.html';
+});
+// Toggle menu visibility and icon change
+document.getElementById('menu-toggle').addEventListener('click', () => {
+    const menuItems = document.getElementById('menu-items');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if (menuItems.style.display === 'block') {
+        menuItems.style.display = 'none';
+        menuIcon.textContent = '➕';
+    } else {
+        menuItems.style.display = 'block';
+        menuIcon.textContent = '➖';
+    }
+});
+
+// Redirect to Categories page
+document.getElementById('categories-button').addEventListener('click', () => {
+    window.location.href = 'categories.html';
+});
+
+// Redirect to Contact Us page
+document.getElementById('contact-button').addEventListener('click', () => {
+    window.location.href = 'contact.html';
+});
+
