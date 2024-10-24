@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="IMDB/home.css">
+    <title>NMDB</title>
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
+    <h1>Filmes Populares</h1>
+
+    <!-- Search input and button -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a movie...">
+        <button id="search-button">Search</button>
+    </div>
     
+    <!-- Link to the Favorite page -->
+    <a href="favorite.html">View My Favorites</a>
+    
+    <!-- Carousel container with scroll buttons -->
+    <div class="carousel-container">
+        <button class="scroll-button left" id="scroll-left">◀</button>
+        <div id="movies-container"></div>
+        <button class="scroll-button right" id="scroll-right">▶</button>
+    </div>
+
+    <script src="./main.js"></script>
 </body>
-<script src="IMDB/main.js"></script>
 </html>
