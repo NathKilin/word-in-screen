@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('./chaplin.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ccc;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.poetic-phrase {
+    font-style: italic;
+    flex: 1;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    text-align: start;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #efb681;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.poetic-phrase h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.poetic-phrase p {
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius: 10px;
+    font-style: italic;
+    color: #ffdd93;
+}
+
+/* Alinha o parágrafo com a classe author-note à direita */
+.author-note {
+    text-align: right;
+    float: right;
+    width: 100%; /* Ocupa toda a linha para o alinhamento correto */
+    padding-top: 10px;
+    font-size: 18px;
+    color: #ffdd93;
+}
+
+#home-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background-color: #9dc9ac;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+#home-button:hover {
+    background-color: #3d9f7d;
+}

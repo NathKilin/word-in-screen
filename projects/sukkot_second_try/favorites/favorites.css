@@ -1,0 +1,100 @@
+/* Body styling with background and font settings */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Sets the primary font */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    background-color: #fffec7; /* Light yellow background color */
+    background-image: url('./mountain.jpg'); /* Sets background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+    background-attachment: fixed; /* Fixes image while scrolling */
+    background-position: center; /* Centers the background image */
+}
+
+/* Adds an overlay background with a blur effect */
+body::before {
+    content: ""; /* Creates a pseudo-element for the overlay */
+    position: fixed; /* Fixes overlay position */
+    top: 0; /* Aligns top of overlay with page top */
+    left: 0; /* Aligns left of overlay with page left */
+    right: 0; /* Aligns right of overlay with page right */
+    bottom: 0; /* Aligns bottom of overlay with page bottom */
+    background-image: url('./mountain.jpg'); /* Same image as body background */
+    background-size: cover; /* Ensures overlay image covers entire area */
+    background-position: center; /* Centers overlay image */
+    filter: blur(3px); /* Applies blur effect */
+    z-index: -1; /* Places overlay behind all other elements */
+}
+
+/* Header section styling */
+.header {
+    display: flex; /* Arranges header items in a row */
+    justify-content: space-between; /* Adds space between header items */
+    align-items: center; /* Centers items vertically */
+    width: 100%; /* Makes header full width */
+    max-width: 800px; /* Restricts header width */
+    margin-bottom: 20px; /* Adds space below header */
+}
+
+/* Header title styling */
+.header h1 {
+    font-family: Georgia, 'Times New Roman', serif; /* Changes font for the title */
+    font-size: 24px; /* Sets font size */
+    color: #efb681; /* Sets font color */
+    margin: 10px; /* Adds space around title */
+    padding: 10px; /* Adds padding inside title box */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
+    border-radius: 10px; /* Rounds title box corners */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adds shadow to text */
+}
+
+/* Home button styling */
+#home-button {
+    margin-right: 10px; /* Adds space on the right of the button */
+    padding: 10px 15px; /* Sets button padding */
+    background-color: rgba(237, 122, 8, 0.5); /* Semi-transparent background */
+    color: rgba(255, 255, 255, 0.8); /* Light text color */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounds button corners */
+    cursor: pointer; /* Changes cursor on hover */
+    font-size: 22px; /* Sets font size */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Sets font */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Adds a light shadow */
+    border-radius: 10px; /* Rounds button corners */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adds text shadow */
+}
+
+/* Favorites container styling */
+.favorites-container {
+    display: grid; /* Arranges items in a grid */
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    gap: 15px; /* Adds space between items */
+    width: 100%; /* Full width */
+    max-width: 700px; /* Sets max width */
+    justify-content: center; /* Centers grid */
+}
+
+/* Individual favorite item styling */
+.favorite-item {
+    background-color: transparent; /* Transparent background */
+    padding: 8px; /* Adds padding */
+    border-radius: 8px; /* Rounds corners */
+    text-align: center; /* Centers text */
+}
+
+/* Favorite item image styling */
+.favorite-item img {
+    width: 80%; /* Sets image width to 80% */
+    height: auto; /* Keeps aspect ratio */
+    border-radius: 5px; /* Rounds image corners */
+    margin-bottom: 5px; /* Adds space below image */
+}
+
+/* Favorite item text styling */
+.favorite-item p {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Sets font */
+    font-size: 16px; /* Sets font size */
+    color: rgb(255, 255, 255); /* White color */
+    margin: 4px 0 0; /* Adds margin above text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Adds shadow to text */
+}

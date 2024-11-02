@@ -1,0 +1,226 @@
+/* Main site background styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Main font for the site */
+    margin: 0;
+    padding: 0;
+    background-color: #fffec7; /* Light background color */
+    background-image: url('./vintage.jpeg'); /* Background image */
+    background-size: cover; /* Image covers entire background */
+    background-repeat: no-repeat; /* Prevents background image from repeating */
+    background-attachment: fixed; /* Fixes background image position when scrolling */
+    background-position: center; /* Centers the background image */
+    margin: 30px;
+    font-size: 16px;
+    color: rgb(255, 255, 255); /* White text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1); /* Adds a subtle shadow to text */
+}
+
+body::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./vintage.jpeg'); /* Background image for pseudo-element */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Blurs background */
+    z-index: -1; /* Positions it behind main content */
+}
+
+/* Header and Home button container styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', serif; /* Serif font for classic feel */
+}
+
+.header-container h1 {
+    font-size: 28px; /* Title font size */
+}
+
+/* Home button styling */
+#new-home-button {
+    margin-left: 625px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: rgba(237, 122, 8, 0.5); /* Semi-transparent background */
+    color: rgba(255, 255, 255, 0.8); /* Text color with transparency */
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Light shadow for depth */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+/* Styling for the top row containing poster and synopsis */
+.top-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start; /* Aligns content to the top */
+}
+
+.movie-info h2 {
+    font-family: Georgia, 'Times New Roman', serif; /* Serif font for title */
+    font-size: 44px;
+    color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* Poster styling */
+.poster-container {
+    max-width: 300px; /* Limits maximum width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poster-container img {
+    width: 100%; /* Responsive width */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Favorite button styling */
+#favorite-button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #f88f79;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Synopsis styling */
+.synopsis {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 500px; /* Limits width to match trailer */
+    margin-top: 90px;
+    background-color: rgba(68, 53, 37, 0.4); /* Adds a dark overlay */
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.15); /* Adds shadow effect */
+}
+
+/* Bottom row for trailer and additional information */
+.bottom-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Additional information section styling */
+.additional-info {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 50px;
+}
+
+/* Trailer container styling */
+.trailer-container {
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin-top: 100px;
+}
+
+.trailer-container iframe {
+    width: 100%;
+    height: 280px;
+    border-radius: 8px; /* Rounded corners for the iframe */
+}
+
+/* Cast information section styling */
+.cast-info {
+    margin-top: 100px;
+}
+
+.cast-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Carousel container for cast */
+.cast-carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 10px;
+}
+
+.cast-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 10px;
+    scroll-padding-left: 20px;
+    margin: 0 20px;
+}
+
+/* Each cast item styling */
+.cast-item {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 80px;
+}
+
+.cast-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+/* Navigation buttons for the carousel */
+.carousel-btn {
+    background-color: transparent;
+    color:#9dc9ac;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    transition: all 0.5s ease;
+    z-index: 3;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.5);
+    color: #ff4e50;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+.cast-carousel::-webkit-scrollbar {
+    height: 6px; 
+}
+
+.cast-carousel::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}

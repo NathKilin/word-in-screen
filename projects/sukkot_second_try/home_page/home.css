@@ -1,0 +1,371 @@
+/* Background and main style of the site */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffec7;
+    background-image: url('./wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body::before {
+    /* Background image overlay with blur effect */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Blur intensity */
+    z-index: -1;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(145, 145, 103, 0.); /* Semi-transparent background */
+    border-radius: 8px;
+    margin: 20px;
+}
+
+/* Logo and title styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+.site-logo:hover {
+    transform: scale(2); 
+}
+
+/* Favorites button styling */
+.favorites-button button {
+    background-color: #ff4e50;
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 0px;
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    margin-left: 900px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-bar .search-icon {
+    background-color: #9dc9ac; /* Icon color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Filter button and dropdown options styling */
+.filter-container {
+    position: relative;
+    margin-top: 0px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+#filter-button {
+    background-color: transparent;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Filter dropdown options styling */
+.filter-options {
+    display: block; 
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: rgba(255, 254, 199, 0.9); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: max-height 0.4s ease, opacity 0.4s ease; 
+    z-index: 10;
+}
+
+.filter-options.active {
+    max-height: 200px; 
+    opacity: 1; 
+}
+
+.filter-option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(9, 44, 82, 0.5);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+}
+
+.filter-option:hover {
+    background-color: #ff4e50;
+}
+
+/* Movie title styling */
+.movie-item p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    margin: 4px 0 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    max-width: 100px;
+    word-wrap: break-word;
+    white-space: normal; 
+}
+
+/* Category sections styling */
+.category {
+    margin: 20px 0;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* Category title styling */
+.category h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #efb681;
+    margin: 10px;
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}
+
+/* Carousel container styling */
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+    height: 6px; 
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+    border-radius: 10px;
+}
+
+/* Styling for each movie item in the carousel */
+.movie-item {
+    min-width: 150px;
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Adjusts the size of movie item images */
+.movie-item img {
+    width: 100px;
+    height: 150px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    margin-bottom: 8px; /* Space between image and title */
+}
+
+.movie-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Carousel navigation buttons styling */
+.carousel-btn {
+    background-color: transparent;
+    color:#9dc9ac;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 40%;
+    transition: all 0.5s ease;
+    z-index: 3;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.5);
+    color: #ff4e50;
+
+}
+
+/* Left button positioning */
+.left-btn {
+    left: 10px;
+}
+
+/* Right button positioning */
+.right-btn {
+    right: 10px;
+}
+
+/* Home button styling */
+.home-button {
+    background-color: #9dc9ac; 
+    color: #fffec7; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Class for hidden elements */
+.hidden {
+    display: none;
+}
+
+/* Footer styling */
+footer {
+    display: flex;
+    justify-content: right;
+    right: 10px;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* About button in the footer */
+#about-button {
+    background-color: #63aea9;
+    color: rgb(253, 255, 232);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajuste para dispositivos móveis */
+/* Header compactado */
+@media (max-width: 767px) {
+    header {
+        padding: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #333;
+    }
+
+    .site-logo {
+        width: 40px;
+        margin-right: 5px;
+    }
+
+    .favorites-button button,.search-bar .search-icon {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+/* Ajustes para o carrossel */
+@media (max-width: 767px) {
+    .carousel {
+        flex-direction: row;
+        overflow-x: scroll;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .movie-item {
+        min-width: 160px;
+        max-width: 160px;
+        margin: 0 auto;
+    }
+
+    .movie-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .movie-item p {
+        font-size: 14px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .category h2 {
+        font-size: 20px;
+        color: #ffdd93;
+        margin: 10px 0;
+        text-align: left;
+    }
+}
+
+/* Footer simplificado */
+@media (max-width: 767px) {
+    footer {
+        display: flex;
+        justify-content: center;
+        padding: 15px;
+        background-color: #333;
+    }
+
+    #about-button {
+        font-size: 16px;
+        padding: 10px 20px;
+        background-color: #ff4e50;
+        color: #fff;
+        border-radius: 8px;
+    }
+}
