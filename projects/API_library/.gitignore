@@ -1,0 +1,14 @@
+# ignoring dependencies folder
+node_modules/
+
+# ignoring log files
+*.log
+
+# ignoring configuration files of local
+.env
+
+# ignoring temporary files
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
