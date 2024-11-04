@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-const bookRoutes = require('./routes/books');
+const bookRoutes = require('./routes/books_route');
 
 app.use(express.json()); // Necessário para processar JSON no body das requisições
 
