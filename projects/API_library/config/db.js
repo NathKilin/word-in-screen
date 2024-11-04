@@ -3,13 +3,13 @@
 const mongoose = require ('mongoose');
 
 // defining uri 
-const mongoURI = 'mongodb://localhost:27017//library';
+const mongoURI = 'mongodb://localhost:27017/library';
 
 // conecting to mongoDB
 mongoose.connect(mongoURI, {
     // instruction to use the new parsing system 
     // (the way of interpretate Url)
-    userNewUrlParser: true,
+    useNewUrlParser: true,
     // configurating the mechanism of conection
     useUnifiedTopology: true,
 })

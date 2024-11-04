@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Routerr();
+const router = express.Router();
 const Book = require('../models/book');
 
 // route to list all the books
@@ -10,7 +10,7 @@ router.get('/books', async(req, res) => {
         res.json(books);
     }
     catch (err) {
-        res.status(500).jason({ message: err.message})
+        res.status(500).json({ message: err.message})
     }
 });
 
@@ -22,7 +22,7 @@ router.get('/books', async(req, res) => {
         author: req.body.author,
         genre: req.body.genre,
         publishedDate: req.body.publishedDate,
-        avarageRating: req.boby.avarageRating
+        avarageRating: req.body.avarageRating
     });
 
     try{
