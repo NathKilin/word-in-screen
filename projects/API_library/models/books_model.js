@@ -13,5 +13,17 @@ const bookSchema = new mongoose.Schema({
     genre: {
         type: String,
         required: true
+    },
+    publishedDate: {
+        type: Date,
+        required: true
+    },
+    avarageRating: {
+        type: Number,
+        min: 1,
+        max: 5
     }
-})
+});
+
+const Book = mongoose.model('Book', bookSchema);
+module.exports = Book;
