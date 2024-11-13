@@ -1,1 +1,70 @@
 mongoDB code: uVHjPKXjqZACMfNx
+DB_URInode = "mongodb+srv://nathkilin:uVHjPKXjqZACMfNx@cluster0.eikls.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+-COMMANDS-
+
+*
+1. npm init -y
+
+To update the Node Package Manager.
+You recive a package.json file as answer. 
+There is the heart of the Node project. 
+It records important metadata and defines
+functional attributes that npm uses to install 
+dependencies, run scripts, and identify entry point.
+*
+
+*
+2. npm i express
+
+To install express framework.
+You recive your package-lock.json.
+It provides features for building applications
+and helps manage servers and routes.
+*
+
+*
+3. npm i mongoose
+
+To install mongoose library.
+You recive a node_modules folder.
+Mongoose is an Object Data Modeling (ODM) 
+for MongoDB and Node.js. 
+It manages relationships between data,
+provides schema validation and 
+is used to translate between objects in code
+and the representation of those objects in MongoDB.
+*
+
+
+-ABOUT package.json-
+
+Once you open package.json,
+you want to add some lines like:
+
+            ||
+            \/
+
+*
+"scripts": 
+{
+    "start": "nodemon app.js",
+}
+
+Nodemon is a command-line tool that helps with
+the speedy development of Node.js applications.
+It automatically restarts your application
+when it detects any changes. This means that
+you do not have to stop and restart 
+your applications in order for 
+your changes to take effect.
+*
+
+*
+"dependencies": 
+{
+    "dotenv": "^16.4.5",
+}
+
+Dotenv is a zero-dependency module 
+that loads environment variables from a .env file
