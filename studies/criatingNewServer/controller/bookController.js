@@ -1,7 +1,5 @@
 //Model import
 
-//function to test server
-
 //function to add book
 
 //function to get all books

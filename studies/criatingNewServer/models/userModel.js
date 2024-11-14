@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
     fName: {
         type: String,
         require: true
-     },
+    },
     lName: {
         type: String,
         require: true
@@ -13,8 +13,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    favoriteBook: {
-        type: String,
+    favoriteBooks: {
+        type: Array,
         require: false
     }
 });
