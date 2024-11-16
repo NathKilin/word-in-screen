@@ -6,17 +6,17 @@ const mongoose = require("mongoose");
 require('dotenv').config();
 
 //criate an express ENTITY
-const app = express
+const app = express();
 
 //import user from model
-const user = require("./models/userModel")
+const user = require("./models/userModel.js");
 
 //import book from model
-const book = require("./models/bookModel")
+const book = require("./models/bookModel.js");
 
 //import routers for both of them
-const userRouter = require("./routers/userRouters")
-const bookRouter = require("./routers/bookRouter")
+const userRouter = require("./routers/userRouter.js");
+const bookRouter = require("./routers/bookRouter.js");
 
 //name your port
 const PORT = 3000

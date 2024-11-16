@@ -1,5 +1,5 @@
 //Model import
-const User = require("../model/userModel.js")
+const User = require("../models/userModel.js")
 
 //function to test server
 
@@ -69,5 +69,6 @@ const getAllUsers = async (req, res) => {
 //function to update specific key-value by ID
 
 module.exports = {
-    createUser
+    createUser,
+    getAllUsers
 }
