@@ -1,2 +1,10 @@
+body{
+    background-color: hsl(30, 54%, 90%);
+    padding: 50px;
+
+}
 .mainContainer{
-    border: 24px solid rgb(208, 105, 146)}
+    background-color: white;
+    border-radius: 15px;
+    padding: 50px;
+}
