@@ -1,6 +1,18 @@
 h4{
     color: hsl(14, 45%, 36%);
+    font-family: 'Young Serif', serif;
+    font-size: 22px;
 }
 ol{
     color: hsl(24, 5%, 18%);
+    font-family: 'Outfit', sans-serif; 
+    font-size: 15px;    
 }
+li{
+    margin-top: 10px;
+}
+ol li::marker {
+    color: hsl(14, 45%, 36%);
+    font-size: 15px; 
+    font-weight: bolder;
+ }

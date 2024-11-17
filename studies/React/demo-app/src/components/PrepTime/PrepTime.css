@@ -1,4 +1,13 @@
+.prepTime{
+    margin-top: 30px;
+    background-color: hsl(330, 100%, 98%);
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
 h2{
     font-size: 18px;
     color: hsl(332, 51%, 32%);
+    font-family: 'Outfit', sans-serif; 
 }

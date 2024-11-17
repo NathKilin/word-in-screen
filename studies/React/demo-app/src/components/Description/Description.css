@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif:wght@400&family=Outfit:wght@400&display=swap');
+
 .description{
     color: hsl(24, 5%, 18%)
 }
-.description.h1{
+
+.description h1{
     font-size: 30px;
+    font-family: 'Young Serif', serif;
 }
+

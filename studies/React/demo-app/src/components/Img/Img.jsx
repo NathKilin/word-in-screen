@@ -10,10 +10,14 @@ return (
         alt="Image"
         style={{
         maxWidth: "100%",
-        borderRadius: "15px", 
+        borderRadius: "15px",
         }}
     />
     </div>
 );}
 
 export default Img;
+
+
+// - Mobile: 375px
+// - Desktop: 1440px

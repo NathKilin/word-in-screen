@@ -5,7 +5,7 @@ const Ingredients = () => {
     return (
         <div className="Ingredients">
             <h3>
-                Ingredients:
+                Ingredients
             </h3>
             <List/>
         </div>
