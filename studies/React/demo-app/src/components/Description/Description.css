@@ -1,3 +1,6 @@
 .description{
     color: hsl(24, 5%, 18%)
 }
+.description.h1{
+    font-size: 30px;
+}

@@ -1,11 +1,11 @@
-import "./Nutrition.css"
+import "./Nutrition.css";
 import React from "react";
 
 const Nutrition = () => {
     return (
-        <div class="Nutrition">
+        <div className="Nutrition"> {/* Corrigido para usar className */}
 
-            <h2>Nutrition</h2>
+            <h5>Nutrition</h5>
             <p>The table below shows nutritional values per serving without the additional fillings.</p>
             <table>
                 <tbody>
@@ -28,21 +28,7 @@ const Nutrition = () => {
                 </tbody>
             </table>
         </div>
-    
-    )
-}
+    );
+};
 
-export default Nutrition
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default Nutrition;

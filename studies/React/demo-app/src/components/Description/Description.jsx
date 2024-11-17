@@ -5,7 +5,9 @@ import Intro from "../Intro/Intro.jsx";
 const description = () => {
     return (
         <div className="description">
-            Simple Omelette Recipe
+            <h1>
+                Simple Omelette Recipe
+            </h1>
             <Intro/>
         </div>
 

@@ -4,7 +4,9 @@ import React from "react";
 const Instructions = () => {
     return (
         <div className= "Instructions">
+            <h4>
             Instructions
+            </h4>
 
             <ol>
                 <li>
