@@ -1,11 +1,11 @@
 body{
-    background-color: hsl(30, 54%, 90%);
-    padding: 400px;
+    background-color: hsl(216, 12%, 8%);
+    padding: 200px;
 }
 .mainContainer{
-    background-color: white;
+    background-color: hsl(213, 19%, 18%);
     border-radius: 15px;
-    padding: 50px;
+    padding: 10px;
 }
 
 @media (max-width: 700px) {
@@ -17,3 +17,6 @@ body{
         padding: 30px;
     }
 }
+
+/* // - Mobile: 375px
+// - Desktop: 1440px */

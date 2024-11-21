@@ -18,6 +18,3 @@ return (
 
 export default Img;
 
-
-// - Mobile: 375px
-// - Desktop: 1440px
