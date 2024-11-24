@@ -13,16 +13,13 @@ setDidUserSubmited,
 }) => {
 return (
     <div className="mainContainer">
-      {/* Condicional para trocar entre o formulário e o resultado */}
     {didUserSubmited ? (
-        // Mostra o resultado se o usuário clicou em Submit
         <ResultComp userChoice={userChoice} />
     ) : (
-        // Mostra o formulário se ainda não foi enviado
         <>
-        <Star />
+        { bool?<Star /> :<>not</>
+}
         <Text />
-          {/* Passando as funções necessárias para Buttons */}
         <Buttons
             setUserChoice={setUserChoice}
             setDidUserSubmited={setDidUserSubmited}

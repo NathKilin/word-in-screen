@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #b3e5d1; 
 }
 
 .App-logo {
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ff4646; /* Vermelho clássico */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +26,8 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #61dafb; /* Azul brilhante */
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +37,64 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.pokemon-card {
+  background-color: white; 
+  border: 4px solid #ff4646; 
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.pokemon-name {
+  font-size: 1.2rem;
+  color: #004aad; 
+  font-weight: bold;
+}
+
+.MainScreen {
+  background-color: #004aad; /* Azul clássico */
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #ff4646; /* Vermelho clássico */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #cc3838; /* Vermelho escuro */
+}
+
+button:active {
+  background-color: #b03030; /* Vermelho ainda mais escuro */
 }
