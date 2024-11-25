@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
+import PostModal from "../../Components/PostModal/PostModal.jsx"; // Importe o modal
 import styles from "./HomePage.module.css";
 
 function generatePosts(numberOfPosts) {
@@ -22,6 +24,17 @@ const HomePage = ({ isLogIn }) => {
 
   const posts = generatePosts(20);
 
+  // Estado para gerenciar o modal
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  const handleOpenModal = (post) => {
+    setSelectedPost(post); // Define o post selecionado
+  };
+
+  const handleCloseModal = () => {
+    setSelectedPost(null); // Fecha o modal
+  };
+
   return (
     <div className="home-page">
       <main className={styles.feed}>
@@ -31,9 +44,20 @@ const HomePage = ({ isLogIn }) => {
               {post.imagePlaceholder}
             </div>
             <p className={styles.caption}>{post.caption}</p>
+            <button
+              className={styles.commentButton}
+              onClick={() => handleOpenModal(post)}
+            >
+              Comentar
+            </button>
           </div>
         ))}
       </main>
+
+      {/* Renderiza o modal se um post foi selecionado */}
+      {selectedPost && (
+        <PostModal post={selectedPost} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };
