@@ -10,7 +10,7 @@ function App() {
       <Provider store={store}>
         <div style={{ textAlign: "center", marginTop: "50px" }}>
           <h1>Redux To-Do List</h1>
-          <TodoList />
+          <TodoList /> 
         </div>
       </Provider>
     </>
@@ -18,3 +18,4 @@ function App() {
 }
 
 export default App;
+Redux/src/store/actions/TodosActions.js
