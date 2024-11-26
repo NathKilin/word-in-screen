@@ -1,60 +1,60 @@
 .modalBackdrop {
-  position: fixed; /* Fixa o modal na viewport */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro translúcido */
-  display: flex; /* Centraliza o modal usando flexbox */
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Certifica-se de que o modal está acima de outros elementos */
+  position: fixed; /* Keeps the modal fixed in the viewport */
+  top: 0; /* Aligns the backdrop to the top of the viewport */
+  left: 0; /* Aligns the backdrop to the left of the viewport */
+  width: 100%; /* Covers the full width of the viewport */
+  height: 100%; /* Covers the full height of the viewport */
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a translucent dark background */
+  display: flex; /* Uses flexbox to center the modal */
+  justify-content: center; /* Horizontally centers the modal */
+  align-items: center; /* Vertically centers the modal */
+  z-index: 1000; /* Ensures the modal is above other elements */
 }
 
 .modalContent {
-  background: #fff; /* Fundo branco */
-  padding: 20px;
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  width: 80%; /* Largura do modal */
-  max-width: 600px; /* Largura máxima */
+  background: #fff; /* Sets a white background for the modal */
+  padding: 20px; /* Adds padding inside the modal */
+  border-radius: 10px; /* Rounds the corners of the modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+  width: 80%; /* Makes the modal 80% of the viewport's width */
+  max-width: 600px; /* Sets a maximum width for larger screens */
 }
 
 .imagePlaceholder {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  width: 100%; /* Ensures the image placeholder takes up the full width */
+  height: auto; /* Maintains the image's aspect ratio */
+  margin-bottom: 10px; /* Adds spacing below the image placeholder */
 }
 
 .comments {
-  margin-top: 20px;
+  margin-top: 20px; /* Adds space above the comments section */
 }
 
 .addComment {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  display: flex; /* Aligns the input and button side by side */
+  gap: 10px; /* Adds spacing between the input field and button */
+  margin-top: 20px; /* Adds space above the comment input section */
 }
 
 .addComment input {
-  flex: 1;
-  padding: 8px;
-  font-size: 14px;
+  flex: 1; /* Allows the input field to grow and take up available space */
+  padding: 8px; /* Adds padding inside the input field */
+  font-size: 14px; /* Sets a readable font size */
 }
 
 .addComment button {
-  padding: 8px 12px;
-  font-size: 14px;
-  cursor: pointer;
+  padding: 8px 12px; /* Adds padding inside the button for better clickability */
+  font-size: 14px; /* Sets the font size of the button text */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
 }
 
 .closeButton {
-  margin-top: 20px;
-  padding: 8px 12px;
-  font-size: 14px;
-  background: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-top: 20px; /* Adds spacing above the close button */
+  padding: 8px 12px; /* Adds padding inside the button for better clickability */
+  font-size: 14px; /* Sets the font size of the button text */
+  background: red; /* Sets the background color to red */
+  color: white; /* Makes the button text white */
+  border: none; /* Removes the default border */
+  border-radius: 5px; /* Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
 }

@@ -1,49 +1,66 @@
-import React, { useState, useEffect } from "react";
-import styles from "./PostModal.module.css";
+import React, { useState, useEffect } from "react"; 
+import styles from "./PostModal.module.css"; 
 
+// Component for the post modal
 const PostModal = ({ post, onClose }) => {
-  const [comments, setComments] = useState([]); // Comentários do post
-  const [newComment, setNewComment] = useState(""); // Novo comentário
+  // holding list of comments
+  const [comments, setComments] = useState([]); 
+  // holding value of new comment
+  const [newComment, setNewComment] = useState(""); 
 
-  // Simula uma API que carrega comentários
+  // fake API function to fetch
   const fetchComments = () => {
     return [
-      { id: 1, user: "Usuário1", text: "Ótimo post!" },
-      { id: 2, user: "Usuário2", text: "Muito interessante!" },
+      { id: 1, user: "Usuário1", text: "Ótimo post!" }, 
+      { id: 2, user: "Usuário2", text: "Muito interessante!" }
     ];
   };
 
-  // Simula carregar comentários ao abrir o modal
+  // simulating loading comments when the modal opens
   useEffect(() => {
-    const simulatedComments = fetchComments();
-    setComments(simulatedComments);
-  }, []);
+    // fake API call
+    const simulatedComments = fetchComments(); 
+    // Setting the fetched comments in the state
+    setComments(simulatedComments); 
+    // Empty dependency array ensures this runs only once when the modal is rendered
+  }, []); 
 
-  // Função para adicionar um comentário
+  // Function to handle adding a new comment
   const handleAddComment = () => {
-    if (newComment.trim() === "") return; // Evita comentários vazios
+    if (newComment.trim() === "") return; // Prevents adding empty comments
     const newCommentObj = {
-      id: comments.length + 1,
-      user: "Você", // Simula o usuário atual
-      text: newComment,
+      id: comments.length + 1, // Unique ID for the new comment
+      user: "Você", // Simulated current user
+      text: newComment, // Text of the new comment
     };
-    setComments([...comments, newCommentObj]); // Adiciona o novo comentário
-    setNewComment(""); // Limpa o campo de entrada
+    setComments([...comments, newCommentObj]); // Updates the comments state with the new comment
+    setNewComment(""); // Clears the input field
   };
 
   return (
-    <div className={styles.modalBackdrop} onClick={onClose}>
-      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+    <div className={styles.modalBackdrop} onClick={onClose}> 
+      {/* Backdrop that closes the modal when clicked */}
+      <div
+        className={styles.modalContent}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Modal content container; click events inside do not close the modal */}
+
         <div className={styles.imagePlaceholder}>
-          {post.imagePlaceholder}
+          {/* Placeholder for the post's image */}
+          {post.imagePlaceholder} {/* Displays the post's image or placeholder */}
         </div>
-        <p className={styles.caption}>{post.caption}</p>
+
+        <p className={styles.caption}>{post.caption}</p> 
+        {/* Displays the caption of the post */}
 
         <div className={styles.comments}>
-          <h3>Comentários</h3>
+          <h3>Comentários</h3> 
+          {/* Comments section header */}
           <ul>
             {comments.map((comment) => (
               <li key={comment.id}>
+                {/* Displays each comment with the username and text */}
                 <strong>{comment.user}:</strong> {comment.text}
               </li>
             ))}
@@ -51,16 +68,19 @@ const PostModal = ({ post, onClose }) => {
         </div>
 
         <div className={styles.addComment}>
+          {/* Input field and button to add a new comment */}
           <input
             type="text"
             placeholder="Adicione um comentário..."
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
+            value={newComment} // Binds the input value to newComment state
+            onChange={(e) => setNewComment(e.target.value)} // Updates state on user input
           />
           <button onClick={handleAddComment}>Enviar</button>
+          {/* Button to submit the new comment */}
         </div>
 
         <button className={styles.closeButton} onClick={onClose}>
+          {/* Button to close the modal */}
           Fechar
         </button>
       </div>
@@ -68,4 +88,4 @@ const PostModal = ({ post, onClose }) => {
   );
 };
 
-export default PostModal;
+export default PostModal; // Exporting the component for use in other parts of the app
