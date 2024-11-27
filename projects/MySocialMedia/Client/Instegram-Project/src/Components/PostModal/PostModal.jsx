@@ -30,12 +30,17 @@ const PostModal = ({ post, onClose }) => {
     // Prevents adding empty comments
     if (newComment.trim() === "") return; 
     const newCommentObj = {
-      id: comments.length + 1, // Unique ID for the new comment
-      user: "You", // Simulated current user
-      text: newComment, // Text of the new comment
+      // Unique ID for the new comment
+      id: comments.length + 1, 
+      // Simulated current user
+      user: "You", 
+      // Text of the new comment
+      text: newComment, 
     };
-    setComments([...comments, newCommentObj]); // Updates the comments state with the new comment
-    setNewComment(""); // Clears the input field
+    // Updates the comments state with the new comment
+    setComments([...comments, newCommentObj]); 
+    // Clears the input field
+    setNewComment(""); 
   };
 
   return (
@@ -89,4 +94,5 @@ const PostModal = ({ post, onClose }) => {
   );
 };
 
-export default PostModal; // Exporting the component for use in other parts of the app
+// Exporting the component for use in other parts of the app
+export default PostModal; 
