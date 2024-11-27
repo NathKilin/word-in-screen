@@ -1,16 +1,10 @@
-// Importa React e useState para gerenciar o estado local do componente
 import React, { useState } from "react";
-// Importa as ações definidas para as tarefas
-import {
-  addTodo,
-  toggleTodo,
-  deleteTodo,
-} from "../store/actions/TodosActions.js";
+ import { addTodo, toggleTodo, deleteTodo } from "../store/actions/TodosActions.js";
 // Importa os hooks do Redux para conectar o componente à store
 import { useDispatch, useSelector } from "react-redux";
 
 // Componente que exibe e gerencia a lista de tarefas
-function TodoList() {
+function TodoList() { 
   // Seleciona a lista de tarefas do estado global
   const todos = useSelector((state) => state.todos);
   
