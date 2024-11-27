@@ -11,8 +11,8 @@ const PostModal = ({ post, onClose }) => {
   // fake API function to fetch
   const fetchComments = () => {
     return [
-      { id: 1, user: "Usuário1", text: "Ótimo post!" }, 
-      { id: 2, user: "Usuário2", text: "Muito interessante!" }
+      { id: 1, user: "User 1", text: "My maaaan!" }, 
+      { id: 2, user: "User 2", text: "Mazal Tov" }
     ];
   };
 
@@ -27,10 +27,11 @@ const PostModal = ({ post, onClose }) => {
 
   // Function to handle adding a new comment
   const handleAddComment = () => {
-    if (newComment.trim() === "") return; // Prevents adding empty comments
+    // Prevents adding empty comments
+    if (newComment.trim() === "") return; 
     const newCommentObj = {
       id: comments.length + 1, // Unique ID for the new comment
-      user: "Você", // Simulated current user
+      user: "You", // Simulated current user
       text: newComment, // Text of the new comment
     };
     setComments([...comments, newCommentObj]); // Updates the comments state with the new comment
