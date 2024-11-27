@@ -1,7 +1,7 @@
-import React, { useState } from "react"; // Importing React and useState for managing component state
-import { Navigate } from "react-router-dom"; // Importing Navigate to redirect users if not logged in
-import PostModal from "../../Components/PostModal/PostModal.jsx"; // Importing the PostModal component
-import styles from "./HomePage.module.css"; // Importing CSS module for styling
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
+import PostModal from "../../Components/PostModal/PostModal.jsx"; 
+import styles from "./HomePage.module.css"; 
 
 // Function to generate a list of sample posts
 function generatePosts(numberOfPosts) {
@@ -24,7 +24,8 @@ const HomePage = ({ isLogIn }) => {
     return <Navigate to="/login" replace />;
   }
 
-  const posts = generatePosts(20); // Generate 20 posts to display on the homepage
+  // Generate 20 posts to display on the homepage
+  const posts = generatePosts(20); 
 
   // State to manage the currently selected post for the modal
   const [selectedPost, setSelectedPost] = useState(null);
@@ -36,7 +37,8 @@ const HomePage = ({ isLogIn }) => {
 
   // Function to close the modal
   const handleCloseModal = () => {
-    setSelectedPost(null); // Reset the selected post to null
+    // Reset the selected post to null
+    setSelectedPost(null); 
   };
 
   return (
@@ -55,7 +57,8 @@ const HomePage = ({ isLogIn }) => {
             {/* Button to open the modal for this post */}
             <button
               className={styles.commentButton}
-              onClick={() => handleOpenModal(post)} // Passes the selected post to the modal
+              // Passes the selected post to the modal
+              onClick={() => handleOpenModal(post)} 
             >
               Comentar
             </button>
@@ -71,4 +74,5 @@ const HomePage = ({ isLogIn }) => {
   );
 };
 
-export default HomePage; // Exporting the component to be used in other parts of the app
+// Exporting the component to be used in other parts of the app
+export default HomePage; 
