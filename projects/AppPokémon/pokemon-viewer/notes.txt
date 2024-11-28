@@ -1,0 +1,55 @@
+src/
+Where React code live
+
+----------------------------
+
+components/ → Reusable UI components.
+
+CardPokemon.jsx 
+- Component to display individual Pokémon cards.
+
+ModalDetails.jsx
+- Modal to show detailed Pokémon information.
+
+Navbar.jsx
+- The app's navigation bar.
+
+-----------------------------
+
+pages/
+
+Home.jsx
+- The home page displaying the Pokémon grid.
+Details.jsx
+
+- A page for complete Pokémon information.
+AddPokemon.jsx
+
+- A page to create and add a new Pokémon.
+
+-----------------------------
+
+services/
+Contains functions to interact with the PokéAPI and other services.
+
+api.js
+- File to manage API requests (e.g., fetching Pokémon data, handling local storage).
+
+------------------------------
+
+styles/
+Contains global and modular CSS files.
+
+CardPokemon.module.css
+- Styles specific to Pokémon cards.
+
+global.css
+- App-wide styles.
+
+-------------------------------
+
+App.jsx
+- where we define the routes and connect main components.
+
+main.jsx
+- React's entry point, where the app is rendered into the HTML file.
