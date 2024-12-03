@@ -1,0 +1,23 @@
+.details-container {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #a5f080;
+}
+
+.details-container img {
+  width: 150px;
+  margin: 10px 0;
+}
+
+.details-container h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.details-container p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
