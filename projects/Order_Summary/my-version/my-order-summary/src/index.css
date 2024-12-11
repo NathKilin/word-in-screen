@@ -1,13 +1,8 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* index.css */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* Importações do Tailwind CSS */
+@tailwind base; /* Estilos base do Tailwind */
+@tailwind components; /* Componentes pré-definidos do Tailwind */
+@tailwind utilities; /* Utilitários do Tailwind */
+
+/* Seus estilos personalizados podem ser adicionados abaixo */
