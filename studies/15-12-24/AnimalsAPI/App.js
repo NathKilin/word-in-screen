@@ -1,21 +1,19 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-dotenv.config()
 const app = express();
-const PORT = 3000;
-const animalsRoutes = require('./animalRoutes.js');
+const PORT = 3000
 
-app.use(express.json());
+// Routes Imports
+const animalsRoutes = require('./routes/animalsRoutes.js')
 
-mongoose.connect
+// Always use this method to parse your requests
+app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send("Hello, there!");
-});
+    res.send("Server is OK")
+})
 
-app.use('/animals', animalsRoutes);
+app.use('/animals', animalsRoutes)
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+    console.log(`Server is running on port: ${PORT}`);
+})

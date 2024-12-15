@@ -1,39 +1,48 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
+// Dummy data for testing
 const animals = [
-    { id: 1, name: 'Lion' },
-    { id: 2, name: 'Tiger' },
-    { id: 3, name: 'Elephant' },
-    { id: 4, name: 'Giraffe' },
-    { id: 5, name: 'Zebra' }
+    { id: 341, name: 'Lion' },
+    { id: 342, name: 'Tiger' },
+    { id: 343, name: 'Elephant' },
+    { id: 344, name: 'Giraffe' },
+    { id: 345, name: 'Zebra' }
 ];
 
-// Test route
 router.get('/test', (req, res) => {
-    res.send("we're testing");
-});
+    res.send("This is Animals Route")
+})
 
-// Home route
+// GET /animals: Return all animals
 router.get('/', (req, res) => {
-    res.send("Animals API Home");
-});
+    res.send({
+        status: "success",
+        data: animals
+    })
+})
 
-// Random animal route
 router.get('/random', (req, res) => {
-    const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-    res.send(randomAnimal);
-});
+    // console.log(Math.floor(Math.random() * animals.length));
+    const randAnimal = animals[Math.floor(Math.random() * animals.length)]
+    res.send(randAnimal)
+})
 
-// Get animal by ID
+// GET /animals/:id: Return a single animal by ID
 router.get('/:id', (req, res) => {
-    const { id } = req.params;
-    const animal = animals.find(animal => animal.id == id);
-    if (animal) {
-        res.send(animal);
-    } else {
-        res.status(404).send(`Animal with id: ${id} does not exist`);
-    }
-});
+    // Step 1: Get ID from req.params
+    const { id } = req.params
 
-module.exports = router;
+    // Find Animal with matching id
+    animals.forEach(animal => {
+        // console.log(animal);
+        if (animal.id == id) {
+            return res.send(animal)
+        }
+    });
+
+    // if id not found, then return and error
+    res.status(404).send(`Animal with id: ${id} does not exsit`)
+})
+
+module.exports = router
