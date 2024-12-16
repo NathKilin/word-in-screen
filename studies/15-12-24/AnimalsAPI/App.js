@@ -1,19 +1,25 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const animalRouter = require('./routes/animalRoutes.js');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 const app = express();
-const PORT = 3000
+const port = 3000;
 
-// Routes Imports
-const animalsRoutes = require('./routes/animalsRoutes.js')
+mongoose.connect(process.env.MONGODB_URI).then(() => {
+    console.log('Connected to MongoDB');
+});
 
-// Always use this method to parse your requests
-app.use(express.json())
+app.use(express.json()) 
+
+app.use('/api/v1/animals', animalRouter);
 
 app.get('/', (req, res) => {
-    res.send("Server is OK")
-})
+    res.send('Hello World!');
+});
 
-app.use('/animals', animalsRoutes)
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port: ${PORT}`);
-})
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
