@@ -1,18 +1,18 @@
-const Joke = require("../models/Joke.model.js");
+const Joke = require("../models/car.model.js");
 
-const getAllJokes = async (req, res) => {
+const getAllCars = async (req, res) => {
   try {
-    const jokes = await Joke.find();
-    res.json(jokes);
+    const cars = await Car.find();
+    res.json(cars);
   } catch (error) {
     res.status(500).send(error.message);
   }
 };
 
-const createJoke = async (req, res) => {
+const createCar = async (req, res) => {
   try {
     console.log(req.body);
-    const result = await Joke.create(req.body);
+    const result = await Car.create(req.body);
     console.log(result);
 
     res.status(201).json(result);
@@ -21,52 +21,52 @@ const createJoke = async (req, res) => {
   }
 };
 
-const getJokeById = async (req, res) => {
+const getCarById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const joke = await Joke.findById(id);
-    if (!joke) throw new Error("Joke not found");
+    const car = await Car.findById(id);
+    if (!car) throw new Error("Car not found");
 
-    return res.json(joke);
+    return res.json(car);
   } catch (error) {
     res.status(500).send(error.message);
   }
 };
 
-const updateJoke = async (req, res) => {
+const updateCar = async (req, res) => {
   try {
     const { id } = req.params;
-    const joke = await Joke.findByIdAndUpdate(id, req.body, { new: true });
+    const car = await Car.findByIdAndUpdate(id, req.body, { new: true });
 
-    if (!joke) throw new Error("Joke not found");
+    if (!car) throw new Error("car not found");
 
     res.send({
-      message: "Joke updated successfully",
-      joke,
+      message: "car updated successfully",
+      car,
     });
   } catch (error) {
     res.status(500).send(error.message);
   }
 };
 
-const deleteJoke = async (req, res) => {
+const deleteCar = async (req, res) => {
   try {
     const { id } = req.params;
-    const joke = await Joke.findByIdAndDelete(id);
+    const car = await Car.findByIdAndDelete(id);
 
-    if (!joke) throw new Error("Joke not found");
+    if (!car) throw new Error("Car not found");
 
     res.send({
-      message: "Joke deleted successfully",
+      message: "Car deleted successfully",
     });
   } catch (error) {}
 };
 
 module.exports = {
-    getAllJokes,
-    createJoke,
-    getJokeById,
-    updateJoke,
-    deleteJoke,
+    getAllCars,
+    createCar,
+    getCarById,
+    updateCar,
+    deleteCar,
 }
